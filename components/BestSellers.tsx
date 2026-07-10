@@ -6,15 +6,45 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import Container from "./Container";
 import SectionTitle from "./SectionTitle";
 import ProductCard, { type Product } from "./ProductCard";
-import { placeholderImage } from "@/lib/placeholder";
+// import { placeholderImage } from "@/lib/placeholder";
 
 const PRODUCTS: Product[] = [
-  { id: "1", name: "Solstice Signet Ring", price: "$1,240", image: placeholderImage("product-1", 600, 750) },
-  { id: "2", name: "Meridian Layer Chain", price: "$980", image: placeholderImage("product-2", 600, 750) },
-  { id: "3", name: "Aurora Drop Earrings", price: "$760", image: placeholderImage("product-3", 600, 750) },
-  { id: "4", name: "Dawnlight Tennis Bracelet", price: "$2,150", image: placeholderImage("product-4", 600, 750) },
-  { id: "5", name: "Halo Solitaire Ring", price: "$3,480", image: placeholderImage("product-5", 600, 750) },
-  { id: "6", name: "Ember Pendant", price: "$890", image: placeholderImage("product-6", 600, 750) },
+  {
+    id: "1",
+    name: "Solstice Signet Ring",
+    price: "$1,240",
+    image: "/images/product1.jpg",
+  },
+  {
+    id: "2",
+    name: "Meridian Layer Chain",
+    price: "$980",
+    image: "/images/product2.jpg",
+  },
+  {
+    id: "3",
+    name: "Aurora Drop Earrings",
+    price: "$760",
+    image: "/images/product3.jpg",
+  },
+  {
+    id: "4",
+    name: "Dawnlight Tennis Bracelet",
+    price: "$2,150",
+    image: "/images/product4.jpg",
+  },
+  {
+    id: "5",
+    name: "Halo Solitaire Ring",
+    price: "$3,480",
+    image: "/images/product5.jpg",
+  },
+  {
+    id: "6",
+    name: "Ember Pendant",
+    price: "$890",
+    image: "/images/product6.jpg",
+  },
 ];
 
 /**

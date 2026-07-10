@@ -4,7 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import Container from "./Container";
 import AnimatedButton from "./AnimatedButton";
-import { placeholderImage } from "@/lib/placeholder";
+// import { placeholderImage } from "@/lib/placeholder";
 
 export default function EditorialBanner() {
   return (
@@ -19,7 +19,7 @@ export default function EditorialBanner() {
             className="relative h-[360px] w-full lg:h-full lg:w-1/2"
           >
             <Image
-              src={placeholderImage("editorial-banner", 1000, 1200)}
+              src="/images/editorial-banner.jpg"
               alt="A model wearing a layered gold necklace from the Meridian collection"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"

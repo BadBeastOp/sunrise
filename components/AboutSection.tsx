@@ -4,7 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import Container from "./Container";
 import AnimatedButton from "./AnimatedButton";
-import { placeholderImage } from "@/lib/placeholder";
+// import { placeholderImage } from "@/lib/placeholder";
 
 export default function AboutSection() {
   return (
@@ -19,7 +19,7 @@ export default function AboutSection() {
             className="relative aspect-[4/5] w-full overflow-hidden rounded-lux lg:w-[45%]"
           >
             <Image
-              src={placeholderImage("about-atelier", 900, 1125)}
+              src="/images/about.jpg"
               alt="A jeweller shaping a gold setting by hand in the Sunrise Treasures atelier"
               fill
               sizes="(max-width: 1024px) 100vw, 45vw"
