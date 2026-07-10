@@ -7,7 +7,5 @@
  * design system until real assets are dropped in.
  */
 export function placeholderImage(seed: string, width: number, height: number) {
-  return `https://picsum.photos/seed/${encodeURIComponent(
-    seed
-  )}/${width}/${height}?grayscale`;
+  return "/images/jweleryimage.jpg";
 }

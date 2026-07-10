@@ -23,17 +23,26 @@ export default function SearchOverlay({
 
   useEffect(() => {
     if (isOpen) {
-      // GSAP animates the underline after overlay opens
       const timer = setTimeout(() => {
         inputRef.current?.focus();
+
         if (lineRef.current) {
           gsap.fromTo(
             lineRef.current,
-            { scaleX: 0, transformOrigin: "left center" },
-            { scaleX: 1, duration: 0.6, ease: "power3.out", delay: 0.3 }
+            {
+              scaleX: 0,
+              transformOrigin: "left center",
+            },
+            {
+              scaleX: 1,
+              duration: 0.6,
+              ease: "power3.out",
+              delay: 0.3,
+            }
           );
         }
       }, 100);
+
       return () => clearTimeout(timer);
     }
   }, [isOpen]);
@@ -47,7 +56,7 @@ export default function SearchOverlay({
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -30 }}
           transition={{ duration: 0.35, ease: "easeInOut" }}
-          className="fixed inset-0 z-[10000] bg-white flex flex-col"
+          className="fixed inset-0 z-[10000] bg-white flex flex-col pointer-events-auto"
           role="dialog"
           aria-modal="true"
           aria-label="Search"
@@ -55,7 +64,11 @@ export default function SearchOverlay({
           {/* Close */}
           <div className="flex justify-end p-6 sm:p-10">
             <button
-              onClick={onClose}
+              type="button"
+              onClick={() => {
+                console.log("CLOSE CLICKED");
+                onClose();
+              }}
               className="
                 flex items-center gap-2 text-[#1a1a1a]
                 text-[12px] tracking-[0.15em] font-medium uppercase
@@ -87,7 +100,12 @@ export default function SearchOverlay({
               className="w-full max-w-2xl relative"
             >
               <div className="flex items-center gap-4 pb-4">
-                <Search size={22} strokeWidth={1} className="text-[#B8966E] flex-shrink-0" />
+                <Search
+                  size={22}
+                  strokeWidth={1}
+                  className="text-[#B8966E] flex-shrink-0"
+                />
+
                 <input
                   ref={inputRef}
                   type="search"
@@ -102,8 +120,10 @@ export default function SearchOverlay({
                   "
                   aria-label="Search query"
                 />
+
                 {query && (
                   <button
+                    type="button"
                     onClick={() => onQueryChange("")}
                     className="text-[#999] hover:text-[#1a1a1a] transition-colors"
                     aria-label="Clear search"
@@ -112,7 +132,7 @@ export default function SearchOverlay({
                   </button>
                 )}
               </div>
-              {/* Animated underline via GSAP */}
+
               <div
                 ref={lineRef}
                 className="h-[1px] bg-[#1a1a1a] w-full"
@@ -127,9 +147,17 @@ export default function SearchOverlay({
               transition={{ delay: 0.35, duration: 0.4 }}
               className="flex flex-wrap gap-3 mt-10 justify-center"
             >
-              {["Rings", "Necklaces", "Earrings", "Bracelets", "Diamonds", "Gold"].map((s) => (
+              {[
+                "Rings",
+                "Necklaces",
+                "Earrings",
+                "Bracelets",
+                "Diamonds",
+                "Gold",
+              ].map((s) => (
                 <button
                   key={s}
+                  type="button"
                   onClick={() => onQueryChange(s)}
                   className="
                     px-5 py-2 border border-[#e5e5e5]

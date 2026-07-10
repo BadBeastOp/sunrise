@@ -11,7 +11,7 @@ export default function Hero() {
       {/* Background image with slow zoom */}
       <div className="absolute inset-0">
         <Image
-          src={placeholderImage("sunrise-hero", 1920, 1200)}
+          src="/images/hero-banner.jpg"
           alt="A single luxury jewellery piece resting in soft morning light"
           fill
           priority
