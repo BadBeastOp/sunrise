@@ -5,20 +5,20 @@ import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import Container from "./Container";
 import SectionTitle from "./SectionTitle";
-import { placeholderImage } from "@/lib/placeholder";
+// import { placeholderImage } from "@/lib/placeholder";
 
 const COLLECTIONS = [
   {
     name: "Solstice Rings",
-    seed: "collection-rings",
+    image: "/images/rings.jpg",
   },
   {
     name: "Meridian Necklaces",
-    seed: "collection-necklaces",
+    image: "/images/necklace.jpg",
   },
   {
     name: "Aurora Earrings",
-    seed: "collection-earrings",
+    image: "/images/earrings.jpg",
   },
 ];
 
@@ -52,7 +52,7 @@ export default function FeaturedCollections() {
               className="group relative block aspect-[4/5] w-full overflow-hidden rounded-lux"
             >
               <Image
-                src={placeholderImage(collection.seed, 800, 1000)}
+                src={collection.image}
                 alt={collection.name}
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
